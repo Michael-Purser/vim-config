@@ -14,3 +14,13 @@ autocmd BufRead,BufNewFile *.yaml set shiftwidth=2 tabstop=2 expandtab autoinden
 " the NERDTree window
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+" Vim Plug plugin manager
+call plug#begin('~/.vim/plugged')
+" Color schemes
+Plug 'https://github.com/sjl/badwolf'
+Plug 'https://github.com/jonathanfilip/vim-lucius'
+call plug#end()
+
+" Used colorscheme
+colorscheme badwolf
