@@ -1,11 +1,21 @@
-" Add line numbers to left hand side of file
+" Install vim-plug plugin manager: https://github.com/junegunn/vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" List of plugins
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'sjl/badwolf'
+call plug#end()
+
+" Add line numbers
 set number
 
-" Set a color at 120 chars to limit line length:
+" Add a column at 120 characters to limit line length
 set colorcolumn=120
-
-" Add line length autozrap for git commits
-autocmd FileType gitcommit set colorcolumn=72
 
 " Add indentation rules for file extensions
 autocmd BufRead,BufNewFile *.py set shiftwidth=4 tabstop=4 expandtab autoindent
@@ -13,17 +23,13 @@ autocmd BufRead,BufNewFile *.cpp set shiftwidth=2 tabstop=2 expandtab autoindent
 autocmd BufRead,BufNewFile *.h set shiftwidth=2 tabstop=2 expandtab autoindent
 autocmd BufRead,BufNewFile *.yaml set shiftwidth=2 tabstop=2 expandtab autoindent
 
-" Enter NERDTree upon entering Vim, and set the cursor to the main window instead of
-" the NERDTree window
+" NERDTree start when Vim opens, set cursor to main window, close NERDTree when all other windows closed
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-" Vim Plug plugin manager
-call plug#begin('~/.vim/plugged')
-" Color schemes
-Plug 'https://github.com/sjl/badwolf'
-Plug 'https://github.com/jonathanfilip/vim-lucius'
-call plug#end()
+" Add line length autowrap for git commits
+autocmd FileType gitcommit set colorcolumn=72
 
-" Used colorscheme
+" Use colorscheme
 colorscheme badwolf
