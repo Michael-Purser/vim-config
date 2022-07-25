@@ -9,6 +9,7 @@ endif
 call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'sjl/badwolf'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " Add line numbers
@@ -32,4 +33,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd FileType gitcommit set colorcolumn=72
 
 " Use colorscheme
-colorscheme badwolf
+colorscheme codedark
+
+" Useful shortcut to toggle NERDTree
+map <F2> :NERDTreeToggle<CR>
