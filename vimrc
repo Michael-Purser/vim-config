@@ -5,12 +5,21 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" List of plugins
+" -------
+" PLUGINS
+" -------
 call plug#begin()
+" NERDTree file explorer
 Plug 'preservim/NERDTree'
+" CTRLP fuzzy search plugin
+Plug 'ctrlpvim/ctrlp.vim'
+" Theme BadWolf
 Plug 'sjl/badwolf'
+" Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
+
+let g:ctrlp_map = '<c-p>'
 
 " Add line numbers
 set number
