@@ -13,6 +13,8 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 " CTRLP fuzzy search plugin
 Plug 'ctrlpvim/ctrlp.vim'
+" Lighline (better statusline)
+Plug 'itchyny/lightline.vim'
 " Theme BadWolf
 Plug 'sjl/badwolf'
 " Theme Vim-Code-Dark
