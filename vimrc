@@ -17,6 +17,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 " Show indents
 Plug 'Yggdroot/indentLine'
+" GitGutter (see what changed for git)
+Plug 'airblade/vim-gitgutter'
 " Theme BadWolf
 Plug 'sjl/badwolf'
 " Theme Vim-Code-Dark
@@ -53,6 +55,9 @@ autocmd FileType gitcommit set colorcolumn=72
 " Addition to Yggdroot/indentLine: show trailing spaces
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" Reduce update time to reduce lag in some features
+set updatetime=100
 
 " Use colorscheme
 colorscheme codedark
