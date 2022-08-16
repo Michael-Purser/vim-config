@@ -15,6 +15,8 @@ Plug 'preservim/NERDTree'
 Plug 'ctrlpvim/ctrlp.vim'
 " Lighline (better statusline)
 Plug 'itchyny/lightline.vim'
+" Show indents
+Plug 'Yggdroot/indentLine'
 " Theme BadWolf
 Plug 'sjl/badwolf'
 " Theme Vim-Code-Dark
@@ -47,6 +49,10 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Add line length autowrap for git commits
 autocmd FileType gitcommit set colorcolumn=72
+
+" Addition to Yggdroot/indentLine: show trailing spaces
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
 
 " Use colorscheme
 colorscheme codedark
