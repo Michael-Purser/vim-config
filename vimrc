@@ -5,6 +5,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Source CSCOPE file
+source ~/.vim/cscope_maps.vim
+
 " -------
 " PLUGINS
 " -------
