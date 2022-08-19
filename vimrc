@@ -19,7 +19,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 " GitGutter (see what changed for git)
 Plug 'airblade/vim-gitgutter'
-" Plugin to toggle commentinh
+" Plugin to toggle commenting
 Plug 'tpope/vim-commentary'
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
