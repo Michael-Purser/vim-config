@@ -24,6 +24,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 " Plugin to toggle commenting
 Plug 'tpope/vim-commentary'
+" YouCompleteMe
+Plug 'Valloric/YouCompleteMe'
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
@@ -58,6 +60,9 @@ autocmd FileType gitcommit set colorcolumn=72
 " Addition to Yggdroot/indentLine: show trailing spaces
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" YouCompleteMe settings
+let g:ycm_enable_semantic_highlighting=1
 
 " Reduce update time to reduce lag in some features
 set updatetime=100
