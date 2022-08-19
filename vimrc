@@ -21,8 +21,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 " Plugin to toggle commentinh
 Plug 'tpope/vim-commentary'
-" Theme BadWolf
-Plug 'sjl/badwolf'
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
