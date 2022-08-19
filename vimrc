@@ -62,5 +62,10 @@ set updatetime=100
 " Use colorscheme
 colorscheme codedark
 
+" Remappings
+nnoremap to :tabnew<CR>
+nnoremap tn :tabm +1<CR>
+nnoremap tp :tabm -1<CR>
+
 " Useful shortcut to toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
