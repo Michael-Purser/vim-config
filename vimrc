@@ -43,6 +43,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Set status line in every tab
+set laststatus=2
+
 " Add indentation rules for file extensions
 autocmd BufRead,BufNewFile *.py set shiftwidth=4 tabstop=4 expandtab autoindent
 autocmd BufRead,BufNewFile *.cpp set shiftwidth=2 tabstop=2 expandtab autoindent
