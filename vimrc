@@ -54,6 +54,7 @@ autocmd BufRead,BufNewFile *.yaml set shiftwidth=2 tabstop=2 expandtab autoinden
 
 " NERDTree start when Vim opens, set cursor to main window, close NERDTree when all other windows closed
 autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
