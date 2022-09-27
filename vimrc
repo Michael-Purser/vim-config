@@ -26,6 +26,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 " YouCompleteMe
 Plug 'Valloric/YouCompleteMe'
+" Autoformat
+Plug 'vim-autoformat/vim-autoformat'
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
@@ -81,3 +83,6 @@ nnoremap tp :tabm -1<CR>
 
 " Useful shortcut to toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
+
+" Shortcut to enable formatting
+noremap <F3> :Autoformat<CR>
