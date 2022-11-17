@@ -54,12 +54,6 @@ autocmd BufRead,BufNewFile *.cpp set shiftwidth=2 tabstop=2 expandtab autoindent
 autocmd BufRead,BufNewFile *.h set shiftwidth=2 tabstop=2 expandtab autoindent
 autocmd BufRead,BufNewFile *.yaml set shiftwidth=2 tabstop=2 expandtab autoindent
 
-" NERDTree start when Vim opens, set cursor to main window, close NERDTree when all other windows closed
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-autocmd VimEnter * wincmd p
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
 " Add line length autowrap for git commits
 autocmd FileType gitcommit set colorcolumn=72
 
@@ -86,3 +80,43 @@ map <F2> :NERDTreeToggle<CR>
 
 " Shortcut to enable formatting
 noremap <F3> :Autoformat<CR>
+
+" ---------------------
+" SESSION RESTORE STUFF
+" ---------------------
+"  Convenience functions
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = b:sessiondir . '/session.vim'
+  exe "mksession! " . b:filename
+endfunction
+
+function! LoadSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessionfile = b:sessiondir . "/session.vim"
+  if (filereadable(b:sessionfile))
+    exe 'source ' b:sessionfile
+  else
+    echo "No session loaded."
+  endif
+endfunction
+
+function! OpenNERDTree()
+  if (tabpagenr() == 1)
+    :NERDTree | wincmd p
+  else
+    :NERDTreeMirror | wincmd p
+  endif
+endfunction
+
+" To do on leave / enter
+au VimLeave * :tabdo NERDTreeClose
+au VimLeave * if &ft != "gitcommit" | :call MakeSession()
+au VimEnter * nested if &ft != "gitcommit" | :call LoadSession()
+au VimEnter * :tabdo :call OpenNERDTree()
+
+autocmd BufWinEnter * NERDTreeMirror
