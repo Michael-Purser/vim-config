@@ -1,0 +1,3 @@
+nnoremap to :tabnew<CR>
+nnoremap tn :tabm +1<CR>
+nnoremap tp :tabm -1<CR>
