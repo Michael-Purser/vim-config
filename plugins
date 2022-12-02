@@ -27,6 +27,8 @@ Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe'
 " Autoformat
 Plug 'vim-autoformat/vim-autoformat'
+" Markdown preview plugin
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
@@ -56,3 +58,8 @@ let g:ycm_enable_semantic_highlighting=1
 " Settings for vim-autoformat
 " ---------------------------
 noremap <F3> :Autoformat<CR>
+
+" ---------------------------
+" Settings for vim-autoformat
+" ---------------------------
+map <C-m> :MarkdownPreview<CR>
