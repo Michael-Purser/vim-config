@@ -1,9 +1,12 @@
+" Get script path
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 " Source files
-source ${HOME}/dev_tools/vim_config/general
-source ${HOME}/dev_tools/vim_config/custom_commands
-source ${HOME}/dev_tools/vim_config/custom_remappings
-source ${HOME}/dev_tools/vim_config/file_rules
-source ${HOME}/dev_tools/vim_config/plugins
+execute 'source ' . s:path . '/general'
+execute 'source ' . s:path . '/custom_commands'
+execute 'source ' . s:path . '/custom_remappings'
+execute 'source ' . s:path . '/file_rules'
+execute 'source ' . s:path . '/plugins'
 
 " Set colorscheme
 colorscheme codedark
