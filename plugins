@@ -59,7 +59,7 @@ let g:ycm_enable_semantic_highlighting=1
 " ---------------------------
 noremap <F3> :Autoformat<CR>
 
-" ---------------------------
-" Settings for vim-autoformat
-" ---------------------------
+" -----------------------------
+" Settings for markdown-preview
+" -----------------------------
 map <C-m> :MarkdownPreview<CR>
