@@ -56,6 +56,7 @@ let g:indentLine_leadingSpaceChar = '·'
 " --------------------------
 let g:ycm_enable_semantic_highlighting=1
 let g:ycm_clangd_args=['--header-insertion=never']
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " ---------------------------
 " Settings for vim-autoformat
