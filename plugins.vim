@@ -11,28 +11,50 @@ endif
 " List plugins
 " ------------
 call plug#begin()
+
 " NERDTree file explorer
 Plug 'preservim/NERDTree'
+
 " CTRLP fuzzy search plugin
 Plug 'ctrlpvim/ctrlp.vim'
+
 " Lighline (better statusline)
 Plug 'itchyny/lightline.vim'
+
 " Show indents
 Plug 'Yggdroot/indentLine'
+
 " GitGutter (see what changed for git)
 Plug 'airblade/vim-gitgutter'
+
 " Plugin to toggle commenting
 Plug 'tpope/vim-commentary'
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe'
+
+if !has('nvim')
+  " YouCompleteMe
+  Plug 'Valloric/YouCompleteMe'
+endif
+
+if has('nvim')
+  " Coc
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  " Github Copilot
+  Plug 'github/copilot.vim'
+endif
+
 " Autoformat
 Plug 'vim-autoformat/vim-autoformat'
+
 " Markdown preview plugin
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Git plugin
 Plug 'tpope/vim-fugitive'
+
 " Theme Vim-Code-Dark
 Plug 'tomasiser/vim-code-dark'
+
 call plug#end()
 
 " ---------------------
@@ -59,6 +81,12 @@ let g:markdown_syntax_conceal=0
 let g:ycm_enable_semantic_highlighting=1
 let g:ycm_clangd_args=['--header-insertion=never']
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" ----------------
+" Settings for CoC
+" ----------------
+let g:coc_disable_startup_warning = 1
+let g:coc_default_semantic_highlight_groups = 1
 
 " ---------------------------
 " Settings for vim-autoformat
