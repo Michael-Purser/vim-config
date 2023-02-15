@@ -17,3 +17,6 @@ set updatetime=100
 
 " Disable scratch preview window at top
 set completeopt-=preview
+
+" Add yank/paste from system clipboard
+set clipboard=unnamedplus
