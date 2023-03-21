@@ -8,5 +8,7 @@
     }
   },
 
-  "semanticTokens.enable": true
+  "semanticTokens.enable": true,
+
+  "clangd.arguments": ["--header-insertion=never"]
 }
