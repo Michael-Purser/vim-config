@@ -9,6 +9,7 @@
   },
 
   "semanticTokens.enable": true,
+  "inlayHint.enable": false,
 
   "clangd.arguments": ["--header-insertion=never"]
 }
