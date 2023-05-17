@@ -75,6 +75,11 @@ $ curl -fsSL https://deb.nodesource.com/setup_19.x | bash
 $ sudo apt install -y nodejs
 ```
 
+> :information_source:<br>
+> For `clangd`, it is recommended to use a version >= 15.06.<br>
+> You can get a .zip archive of the version at https://github.com/clangd/clangd/releases.<br>
+> Once it is downloaded, place the clangd executable in `/usr/local/bin/` and the include directory `clang/` in `/usr/local/lib/`.
+
 In neovim, install the necessary CoC plugins by running:
 ```
 :CocInstall coc-json coc-clangd
