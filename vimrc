@@ -7,6 +7,3 @@ execute 'source ' . s:path . '/custom_commands.vim'
 execute 'source ' . s:path . '/custom_remappings.vim'
 execute 'source ' . s:path . '/file_rules.vim'
 execute 'source ' . s:path . '/plugins.vim'
-
-" Set colorscheme
-colorscheme codedark

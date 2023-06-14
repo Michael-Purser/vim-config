@@ -102,3 +102,9 @@ map <C-m> :MarkdownPreview<CR>
 " Settings for vim-fugitive
 " -------------------------
 map <F4> :Git blame<CR>
+
+
+" ---------------
+" Set colorscheme
+" ---------------
+colorscheme codedark
