@@ -107,4 +107,4 @@ map <F4> :Git blame<CR>
 " ---------------
 " Set colorscheme
 " ---------------
-colorscheme codedark
+silent! colorscheme codedark
