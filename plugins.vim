@@ -47,7 +47,7 @@ endif
 Plug 'vim-autoformat/vim-autoformat'
 
 " Markdown preview plugin
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Git plugin
 Plug 'tpope/vim-fugitive'
